@@ -1,0 +1,5 @@
+# .gitignore (create this file in the root)
+node_modules/
+dist/
+*.log
+.env
