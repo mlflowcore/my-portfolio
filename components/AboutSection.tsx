@@ -220,7 +220,7 @@ const AboutSection = () => {
                   viewport={{ once: true, margin: "-200px" }}
                   transition={{ delay: 4.2, duration: 0.6 }}
                 >
-                  End of Chapter II
+                 
                 </motion.div>
               </div>
             </motion.div>
