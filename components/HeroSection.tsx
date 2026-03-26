@@ -98,58 +98,29 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <motion.a
-                href="https://github.com/chhatraneupane"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-gray-900 px-8 text-white font-light transition-all duration-200 hover:bg-gray-800"
-              >
-                {"View GitHub".split('').map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    whileHover={{
-                      rotateY: [0, 180, 360],
-                      color: ["#ffffff", "#FB923C", "#ffffff"],
-                      scale: [1, 1.2, 1],
-                      transition: {
-                        duration: 0.5,
-                        ease: "easeInOut"
-                      }
-                    }}
-                    style={{ display: 'inline-block' }}
-                  >
-                    {letter === ' ' ? '\u00A0' : letter}
-                  </motion.span>
-                ))}
-              </motion.a>
-              
-              <motion.a
-                href="/my_cv.pdf"
-                download
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-gray-900 bg-white px-8 text-gray-900 font-light transition-all duration-200 hover:bg-gray-900 hover:text-white"
-              >
-                {"Download CV".split('').map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    whileHover={{
-                      rotateY: [0, 180, 360],
-                      color: ["#111827", "#FB923C", "#111827"],
-                      scale: [1, 1.2, 1],
-                      transition: {
-                        duration: 0.5,
-                        ease: "easeInOut"
-                      }
-                    }}
-                    style={{ display: 'inline-block' }}
-                  >
-                    {letter === ' ' ? '\u00A0' : letter}
-                  </motion.span>
-                ))}
-              </motion.a>
+             {/* View GitHub Button */}
+<motion.a
+  href="https://github.com/chhatraneupane"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className="inline-flex h-12 items-center justify-center rounded-md bg-black px-8 text-sm font-medium text-white border border-black transition-all duration-300 hover:bg-white hover:text-black"
+>
+  View GitHub →
+</motion.a>
+
+{/* Download CV Button */}
+<motion.a
+  href="/my_cv.pdf"
+  download
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className="inline-flex h-12 items-center justify-center rounded-md bg-orange-200/80 px-8 text-sm font-semibold text-black-600 border-1 border-white-300 transition-all duration-300 hover:bg-white hover:text-black"
+>
+  Download CV ↓
+</motion.a>
+
             </motion.div>
           </motion.div>
 
@@ -161,7 +132,7 @@ const HeroSection = () => {
             className="relative"
           >
             <div className="relative w-full max-w-md mx-auto aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-gray-200">
-              {/* Profile Image - Clear and Professional */}
+              {/* Profile Image */}
               <img
                 src="/profile2.jpg"
                 alt="Chhatra Neupane"

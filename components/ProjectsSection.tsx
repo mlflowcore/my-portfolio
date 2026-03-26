@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 import { HiEye } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
-import Starfield from "./Starfield";
 
 interface ProjectInterface {
   id: number;
@@ -14,115 +13,137 @@ interface ProjectInterface {
   techStack?: string[];
 }
 
-const ProjectCard: FC<{
-  project: ProjectInterface;
-}> = ({ project }) => {
+const ProjectCard: FC<{ project: ProjectInterface }> = ({ project }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 200, damping: 18 }}
-      className="group"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -6 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="group relative w-full rounded-2xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-md shadow-[0_8px_32px_rgb(0_0_0_/_0.3)] hover:shadow-[0_20px_60px_rgb(168_85_247_/_0.15)]"
     >
-      <motion.div 
-        className="project-card flex flex-col justify-between overflow-hidden rounded-2xl transition duration-300 border border-white/10 bg-white/5 dark:bg-white/10 backdrop-blur-md shadow-[0_8px_30px_rgb(2_6_23_/_0.45)]"
-      >
+      {/* Mobile: Vertical layout | Desktop: Horizontal layout */}
+      <div className="flex flex-col md:flex-row h-full min-h-[400px] md:h-[400px]">
         
-        {/* Project Image */}
-        <div
-          className="relative w-full h-53 overflow-hidden cursor-pointer"
-        >
-          <img
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            className="object-cover rounded-xl w-full h-full transform transition-transform duration-500 group-hover:scale-110"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"></div>
-        </div>
-
-        {/* Project Content */}
-        <div className="flex-grow space-y-3 p-5">
-          <h3 className="text-xl font-semibold tracking-tight bg-gradient-to-r from-red-400 via-pink-300 to-purple-300 bg-clip-text text-transparent">
+        {/* LEFT CONTENT - Mobile: Top | Desktop: Left */}
+        <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center bg-black/60 backdrop-blur-md z-10">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-purple-300 transition leading-tight">
             {project.title}
           </h3>
-          <p className="text-gray-300/90 text-sm leading-relaxed">{project.description}</p>
 
-          {/* Tech Stack */}
-          {project.techStack && project.techStack.length > 0 && (
-            <div>
-              <h4 className="text-sm mt-4 font-medium text-gray-400">Tech Stack</h4>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {project.techStack.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-indigo-600/20 via-pink-500/20 to-cyan-500/20 border border-white/10 text-gray-300 shadow-[0_0_8px_rgba(255,255,255,0.1)]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+          <p className="text-gray-300 text-sm mb-4 md:mb-5 line-clamp-3 md:line-clamp-4 leading-relaxed">
+            {project.description}
+          </p>
+
+          {/* TECH STACK */}
+          <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
+            {project.techStack?.slice(0, 3).map((tech, i) => (
+              <span
+                key={i}
+                className="text-xs px-2 py-1 rounded-md bg-white/10 text-gray-300 border border-white/10"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.techStack && project.techStack.length > 3 && (
+              <span className="text-xs px-2 py-1 rounded-md bg-white/10 text-gray-300 border border-white/10">
+                +{project.techStack.length - 3}
+              </span>
+            )}
+          </div>
+
+          {/* BUTTONS */}
+          <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
+           {project.previewLink && (
+              <a
+                href={project.previewLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 md:px-5 py-2 text-sm font-medium bg-black text-white border border-transparent transition-all duration-300 hover:bg-white hover:text-black hover:border-black"
+              >
+                View Project
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+            )}
+
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-sm bg-black text-white px-4 py-2 rounded-lg border border-transparent transition-all duration-300 hover:bg-white hover:text-black hover:border-black"
+              >
+                <FaGithub />
+                Code
+              </a>
+            )}
+          </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3 px-5 pb-5">
-          {project.previewLink && (
-            <a
-              href={project.previewLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-md shadow-md hover:scale-105 transition-all duration-300"
-            >
-              Live Demo <HiEye className="text-lg" />
-            </a>
-          )}
-          {project.githubLink && (
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium border border-gray-600 px-4 py-2 rounded-md text-gray-300 hover:bg-gray-800 hover:scale-105 transition-all duration-300"
-            >
-              GitHub <FaGithub className="text-lg" />
-            </a>
-          )}
+        {/* RIGHT IMAGE - Mobile: Bottom | Desktop: Right */}
+        <div className="relative w-full md:w-1/2 h-48 md:h-full overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "/favicon.jpg";
+            }}
+          />
+
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-black/70 via-black/30 to-transparent"></div>
+
+          {/* BADGE */}
+          <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-black/70 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium cursor-pointer transition-all duration-300 hover:bg-white hover:text-purple-600 hover:shadow-lg">
+            Web Application
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
 
 const ProjectsSection = () => {
   const projects: ProjectInterface[] = [
-    
-    
     {
       id: 1,
-      title: "E-Commerce Website 🛒",
+      title: "NutriApp - AI-Powered Meal Planning Web Application",
+      description: "A web application that generates personalized meal plans using user health data",
+      image: "/nutriai.png", 
+      previewLink: "https://nutritoapp.netlify.app/",
+      githubLink: "https://github.com/chhatraraj/-nutriai-mvp",
+      techStack: ["React", "Node.js", "Express.js", "PostgreSQL", "Gemini AI API", "Tailwind CSS"],
+    },
+    
+    {
+      id: 2,
+      title: "E-Commerce Website ",
       description: "A full-featured e-commerce website with shopping cart and payments.",
-      image: "/projects/ecommerce.png",
+      image: "/ecommerce.png",
       previewLink: "https://shop-ease-ecommerce-smoky.vercel.app",
       githubLink: "https://github.com/chhatraraj/ShopEase-Ecommerce",
       techStack: ["React", "Sanity CMS", "Stripe", "Tailwind CSS"],
     },
     {
-      id: 2,
+      id: 3,
       title: "Employee Management System",
       description: "A real-time employee management system.",
-      image: "/projects/employee.png",
-      // previewLink: "https://employee-management-system-six-tau.vercel.app/login",
-      
+      image: "/employee.png",
       previewLink: "https://employee-management-system-six-tau.vercel.app",
       githubLink: "https://github.com/chhatraraj/employee-management-system",
-      techStack: ["React", "localhost", "Tailwind CSS"],
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
-      id: 3,
-      title: "job Portal Website 🌐",
-      description: "My personal portfolio website built with React, Tailwind, and Framer Motion.",
-      image: "/projects/portfolio.png",
+      id: 4,
+      title: "Job Portal Website",
+      description: "A modern job portal application with advanced filtering and application tracking.",
+      image: "/favicon.jpg", 
       previewLink: "https://chhatra-portfolio.vercel.app",
       githubLink: "https://github.com/chhatraraj/portfolio",
       techStack: ["React", "Tailwind CSS", "Shadcn"],
@@ -132,29 +153,47 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative w-full py-16 md:py-24 bg-black text-white overflow-hidden"
+      className="relative w-full py-12 md:py-16 lg:py-24 bg-black text-white overflow-hidden"
     >
-      <Starfield className="pointer-events-none absolute inset-0 -z-10" opacity={0.35} starCount={800} depth={600} />
-
       {/* Section Header */}
-      <div className="container px-4 md:px-6 mx-auto relative">
-        <div className="text-center space-y-2 mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Projects</h2>
-          <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">Selected work highlighting clean UX, performance, and maintainable code.</p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center space-y-4 mb-8 md:mb-12 lg:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
+          >
+            Featured <span className="text-purple-400">Projects</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-gray-400 text-sm md:text-base max-w-3xl mx-auto leading-relaxed px-4"
+          >
+            A curated selection of my recent work showcasing modern web development, 
+            clean architecture, and attention to user experience.
+          </motion.p>
         </div>
 
-        {/* Project Cards */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard
+        {/* Project Cards - Mobile Responsive Grid */}
+        <div className="space-y-6 md:space-y-8">
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
-              project={project}
-            />
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
         </div>
       </div>
-
-      {/* Modal removed for simplicity */}
     </section>
   );
 };

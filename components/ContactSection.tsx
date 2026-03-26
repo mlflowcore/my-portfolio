@@ -86,7 +86,7 @@ export default function ContactWithFooter() {
               </p>
             </div>
 
-            <form ref={form} onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-900">
               <div className="relative">
                 <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <Input
@@ -95,7 +95,7 @@ export default function ContactWithFooter() {
                   placeholder="Your Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="pl-10 bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
+                  className="pl-10 bg-gray-900 border-gray-700 text-white placeholder:text-gray-400"
                 />
               </div>
               <div className="relative">
@@ -120,7 +120,7 @@ export default function ContactWithFooter() {
 
               <Button
                 type="submit"
-                className="w-full text-lg font-semibold flex items-center justify-center bg-gradient-to-r from-red-600 to-gray-700 hover:from-yellow-800 hover:to-gray-800 text-white transition-colors duration-300"
+                className="w-full text-lg font-semibold flex items-center justify-center bg-black text-white border border-transparent transition-all duration-300 hover:bg-green-600/20 hover:text-green-400 hover:border-green-500"
               >
                 Submit 
                 <FaPaperPlane className="ml-2" />
@@ -132,7 +132,7 @@ export default function ContactWithFooter() {
           </div>
 
           {/* Right: Professional Contact Component */}
-          <div className="flex flex-col items-start space-y-8">
+          <div className="flex flex-col items-start space-y-11 space-x-24">
             {/* Professional Message */}
             <div className="space-y-4">
               <p className="text-sm text-neutral-500 font-mono leading-relaxed max-w-sm">
@@ -187,7 +187,7 @@ export default function ContactWithFooter() {
 
             {/* Professional Info for Upwork Clients */}
            
-              <p className="text-lg font-semibold text-white mb-3">
+              {/* <p className="text-lg font-semibold text-white mb-3">
                 Ready to build something amazing?
               </p>
               <p className="text-sm text-gray-300 mb-4">
@@ -204,7 +204,7 @@ export default function ContactWithFooter() {
                 <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full font-mono">
                   Quality Code
                 </span>
-              </div>
+              </div> */}
             
           </div>
         </div>

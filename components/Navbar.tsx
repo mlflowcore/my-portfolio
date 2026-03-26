@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { CodeIcon, MenuIcon, XIcon } from "lucide-react";
-import { ModeToggle } from "./ModeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { smoothScrollTo } from "@/src/smoothScroll";
 
@@ -106,8 +105,6 @@ export default function Navbar() {
 
             {/* Right side actions */}
             <div className="flex items-center gap-4">
-              <ModeToggle />
-              
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
