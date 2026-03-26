@@ -51,8 +51,28 @@ const SkillsSection = () => {
       />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Gallery Number Indicator */}
+        <motion.div 
+          className="text-gray-600 text-sm font-light tracking-widest mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          04
+        </motion.div>
+        
+        {/* Divider Line */}
+        <motion.div
+          className="w-32 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent mb-6"
+          initial={{ width: 0 }}
+          whileInView={{ width: "8rem" }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        />
+        
         {/* Technical Toolkit - Left aligned with animation */}
-        <div className="mb-16">
+        <div className="mb-12">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -67,7 +67,27 @@ export default function ContactWithFooter() {
         <div className="container max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Form Section */}
           <div>
-            <div className="mb-6">
+            {/* Gallery Number Indicator */}
+            <motion.div 
+              className="text-gray-600 text-sm font-light tracking-widest mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              05
+            </motion.div>
+            
+            {/* Divider Line */}
+            <motion.div
+              className="w-32 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: "8rem" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            />
+            
+            <div className="mb-4">
               <motion.h2 
                 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-700 to-gray-300 text-transparent bg-clip-text"
                 initial={{ opacity: 0, x: -100 }}

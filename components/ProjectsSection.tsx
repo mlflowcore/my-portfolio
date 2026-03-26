@@ -157,7 +157,27 @@ const ProjectsSection = () => {
     >
       {/* Section Header */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center space-y-4 mb-8 md:mb-12 lg:mb-16">
+        <div className="text-center space-y-4 mb-6 md:mb-8 lg:mb-12">
+          {/* Gallery Number Indicator */}
+          <motion.div 
+            className="text-gray-600 text-sm font-light tracking-widest"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            03
+          </motion.div>
+          
+          {/* Divider Line */}
+          <motion.div
+            className="w-32 h-0.5 bg-gradient-to-r from-transparent via-orange-400 to-transparent mx-auto mb-6"
+            initial={{ width: 0 }}
+            whileInView={{ width: "8rem" }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          />
+          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
