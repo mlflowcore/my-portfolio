@@ -19,13 +19,13 @@ const HeroSection = () => {
             
             {/* Portrait Image with Chiaroscuro Effect */}
             <motion.div 
-              className="relative order-2 lg:order-1 flex items-center justify-center lg:justify-start"
+              className="relative order-2 lg:order-1 flex items-center justify-center lg:justify-start hidden lg:flex"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
             >
-              {/* Left Side Navigation */}
-              <nav className="absolute -left-20 lg:-left-32 flex flex-col items-center space-y-8">
+              {/* Left Side Navigation - Hidden on mobile */}
+              <nav className="absolute -left-20 lg:-left-32 hidden lg:flex flex-col items-center space-y-8">
                 <motion.a 
                   href="#home" 
                   className="group w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-green-500/30 flex items-center justify-center text-green-400 hover:text-orange-400 hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300"
