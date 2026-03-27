@@ -167,7 +167,7 @@ const HeroSection = () => {
                 transition={{ delay: 0.9, duration: 0.8 }}
               >
                 <motion.a
-                  href="https://github.com/chhatraneupane"
+                  href="https://github.com/chhatraraj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center space-x-2 text-white border-b border-gray-600 pb-1 transition-all duration-300 hover:border-white"
