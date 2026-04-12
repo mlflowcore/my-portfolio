@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react'
-import { motion } from 'framer-motion'
+import Navbar from '@/components/Navbar'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
 
 // Lazy load components that are not immediately visible
-const Navbar = lazy(() => import('@/components/Navbar'))
 const HeroSection = lazy(() => import('@/components/HeroSection'))
 const AboutSection = lazy(() => import('@/components/AboutSection'))
 const ProjectsSection = lazy(() => import('@/components/ProjectsSection'))
@@ -16,33 +16,33 @@ import { Providers } from '@/components/Providers'
 
 export default function App() {
   return (
-    <Providers>
-      <Suspense fallback={<div />}>
+    <ErrorBoundary>
+      <Providers>
         <Navbar />
-      </Suspense>
-      
-      <main className="pt-16">
-        <Suspense fallback={<LoadingScreen />}>
-          <HeroSection />
-        </Suspense>
         
-        <Suspense fallback={<LoadingScreen />}>
-          <AboutSection />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingScreen />}>
-          <ProjectsSection />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingScreen />}>
-          <SkillsSection />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingScreen />}>
-          <ContactSection />
-        </Suspense>
-      </main>
-    </Providers>
+        <main className="pt-16">
+          <Suspense fallback={<LoadingScreen />}>
+            <HeroSection />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingScreen />}>
+            <AboutSection />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingScreen />}>
+            <ProjectsSection />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingScreen />}>
+            <SkillsSection />
+          </Suspense>
+          
+          <Suspense fallback={<LoadingScreen />}>
+            <ContactSection />
+          </Suspense>
+        </main>
+      </Providers>
+    </ErrorBoundary>
   )
 }
 

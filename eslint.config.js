@@ -32,7 +32,7 @@ export default [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'warn',
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-console': process.env.NODE_ENV === 'production' ? ['error'] : 'off',
       'prefer-const': 'error',
       'no-var': 'error',
     },

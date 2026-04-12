@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { IconButton } from "@/components/ui/icon-button";
 
 const HeroSection = () => {
   return (
@@ -26,60 +27,55 @@ const HeroSection = () => {
             >
               {/* Left Side Navigation - Hidden on mobile */}
               <nav className="absolute -left-20 lg:-left-32 hidden lg:flex flex-col items-center space-y-8">
-                <motion.a 
-                  href="#home" 
-                  className="group w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-green-500/30 flex items-center justify-center text-green-400 hover:text-orange-400 hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                </motion.a>
+                <IconButton
+                  href="#home"
+                  label="Go to Home"
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                  }
+                />
                 
-                <motion.a 
-                  href="#about" 
-                  className="group w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-green-500/30 flex items-center justify-center text-green-400 hover:text-orange-400 hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </motion.a>
+                <IconButton
+                  href="#about"
+                  label="Go to About"
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  }
+                />
                 
-                <motion.a 
-                  href="#projects" 
-                  className="group w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-green-500/30 flex items-center justify-center text-green-400 hover:text-orange-400 hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </motion.a>
+                <IconButton
+                  href="#projects"
+                  label="Go to Projects"
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  }
+                />
                 
-                <motion.a 
-                  href="#skills" 
-                  className="group w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-green-500/30 flex items-center justify-center text-green-400 hover:text-orange-400 hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </motion.a>
+                <IconButton
+                  href="#skills"
+                  label="Go to Skills"
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  }
+                />
                 
-                <motion.a 
-                  href="#contact" 
-                  className="group w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-green-500/30 flex items-center justify-center text-green-400 hover:text-orange-400 hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </motion.a>
+                <IconButton
+                  href="#contact"
+                  label="Go to Contact"
+                  icon={
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  }
+                />
               </nav>
 
               {/* Main Portrait Container */}
@@ -93,7 +89,7 @@ const HeroSection = () => {
                 
                 {/* Portrait Image */}
                 <img
-                  src="/profile2.jpg"
+                  src="/profile2 (2).jpg"
                   alt="Chhatra Raj Neupane"
                   className="w-full h-full object-cover"
                   loading="eager"
@@ -106,7 +102,7 @@ const HeroSection = () => {
 
             {/* Text Content - Right Side */}
             <motion.div 
-              className="space-y-8 order-1 lg:order-2 text-center lg:text-left"
+              className="space-y-8 order-1 lg:order-2 text-left"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}

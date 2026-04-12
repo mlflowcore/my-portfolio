@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import { FaEnvelope, FaUser, FaPaperPlane, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -31,8 +31,20 @@ export default function ContactWithFooter() {
       return;
     }
 
+    if (!form.current) {
+      toast.error('Form not available', {
+        position: 'top-center',
+      });
+      return;
+    }
+
     emailjs
-      .sendForm('service_71p7ehw', 'template_occbwgs', form.current!, '2Z0qqashjwnBmgBOb')
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
       .then(() => {
         toast.success('Message sent successfully!', {
           position: 'top-center',
@@ -106,49 +118,6 @@ export default function ContactWithFooter() {
               </p>
             </div>
 
-            <form ref={form} onSubmit={handleSubmit} className="space-y-6 bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-900">
-              <div className="relative">
-                <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <Input
-                  name="name"
-                  type="text"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="pl-10 bg-gray-900 border-gray-700 text-white placeholder:text-gray-400"
-                />
-              </div>
-              <div className="relative">
-                <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
-                />
-              </div>
-              <Textarea
-                name="message"
-                placeholder="Tell me about your project..."
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                rows={5}
-                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
-              />
-
-              <Button
-                type="submit"
-                className="w-full text-lg font-semibold flex items-center justify-center bg-black text-white border border-transparent transition-all duration-300 hover:bg-green-600/20 hover:text-green-400 hover:border-green-500"
-              >
-                Submit 
-                <FaPaperPlane className="ml-2" />
-              </Button>
-              <p className="text-center text-sm text-gray-400 font-medium">
-                I respond within 24 hours.
-              </p>
-            </form>
           </div>
 
           {/* Right: Professional Contact Component */}
@@ -230,15 +199,11 @@ export default function ContactWithFooter() {
         </div>
       </section>
 
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-800 bg-black text-white">
-        <p className="text-sm text-gray-300">
-          &copy; {new Date().getFullYear()} Chhatra Neupane. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a href="#" className="text-xs hover:underline underline-offset-4 text-gray-300 hover:text-white transition-colors">Privacy</a>
-          <a href="#" className="text-xs hover:underline underline-offset-4 text-gray-300 hover:text-white transition-colors">Terms of Service</a>
-        </nav>
-      </footer>
+     <footer className="w-full py-6 flex justify-center items-center bg-neutral-950 border-t border-white/5">
+  <p className="text-[11px] text-gray-500 text-center tracking-wide">
+    © {new Date().getFullYear()} Chhatra Neupane · All rights reserved
+  </p>
+</footer>
     </>
   );
 }

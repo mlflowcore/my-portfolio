@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+interface FramerMotionModule {
+  motion: typeof import('framer-motion').motion;
+}
+
 const AboutSection = () => {
-  const [motionModule, setMotionModule] = useState<any>(null);
+  const [motionModule, setMotionModule] = useState<FramerMotionModule | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -75,7 +79,7 @@ const AboutSection = () => {
     );
   }
 
-  const { motion } = motionModule as any;
+  const { motion } = motionModule as FramerMotionModule;
 
   return (
     <section id="about" className="min-h-screen bg-black relative overflow-hidden">
@@ -135,23 +139,13 @@ const AboutSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <motion.p
-              className="text-gray-300 text-xl leading-relaxed max-w-3xl mx-auto font-light"
+              className="text-gray-300 text-xl leading-relaxed max-w-3xl text-left font-light"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-200px" }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              Hello everyone, I am Chhatra Neupane, currently pursuing my final year bachelor's degree in Computer Engineering. I am a passionate Backend Developer, machine learning and deep learning enthusiast, and an avid problem solver.
-            </motion.p>
-
-            <motion.p
-              className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto font-light italic"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-200px" }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              "I’m an engineer and AI enthusiast driven to build smart, efficient systems while continuously learning and applying new technologies in collaborative environments.”
+              Hello everyone, I am Chhatra Neupane, currently pursuing my final year bachelor's degree in Computer Engineering. I am a passionate Backend Developer, machine learning and deep learning enthusiast, and an avid problem solver, driven to build smart, efficient systems while continuously learning and applying new technologies in collaborative environments.
             </motion.p>
 
             <motion.div
@@ -201,15 +195,7 @@ const AboutSection = () => {
               transition={{ delay: 2, duration: 0.4 }}
             >
               <div className="flex items-center justify-between mb-4">
-                <motion.div
-                  className="flex-1 h-0.5 bg-gradient-to-l from-orange-400/20 via-orange-400 to-orange-400/20 mx-8"
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true, margin: "-200px" }}
-                  transition={{ delay: 2.2, duration: 0.6 }}
-                  style={{ transformOrigin: 'right' }}
-                />
-
+                <div className="flex-1"></div>
                 <motion.div
                   className="text-orange-400 text-sm font-light tracking-widest"
                   initial={{ opacity: 0, x: 50 }}
@@ -245,7 +231,7 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-200px" }}
-                  transition={{ delay: 3.4, duration: 0.6 }}
+                  transition={{ delay: 2.8, duration: 0.6 }}
                 >
                   THE JOURNEY CONTINUES...
                 </motion.div>

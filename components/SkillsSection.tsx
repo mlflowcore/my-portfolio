@@ -14,14 +14,14 @@ const skillsData = [
     category: "Frontend ",
     items: ["React", "Next.js", "Shadcn", "Tailwind CSS"]
   },
-  {
-    category: "LLM FRAMEWORKS", 
-    items: ["LangChain", "LlamaIndex", "OpenAI API", "Hugging Face", "Anthropic Claude"]
-  },
-  {
-    category: "MODELS",
-    items: ["GPT-4", "Claude", "Llama 2", "Mistral", "Gemini" ]
-  },
+  // {
+  //   category: "LLM FRAMEWORKS", 
+  //   items: ["LangChain", "LlamaIndex", "OpenAI API", "Hugging Face", "Anthropic Claude"]
+  // },
+  // {
+  //   category: "MODELS",
+  //   items: ["GPT-4", "Claude", "Llama 2", "Mistral", "Gemini" ]
+  // },
   // {
   //   category: "VECTOR DBS",
   //   items: ["Pinecone", "Chroma", "Weaviate", "FAISS", "Milvus"]
@@ -81,7 +81,7 @@ const SkillsSection = () => {
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
               <span className="bg-gradient-to-r from-orange-300 via-red-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
-                TECHNICAL TOOLKIT
+                ENGINEERING ARSENAL
               </span>
              
             </h2>
@@ -157,14 +157,13 @@ const SkillsSection = () => {
             
             <div className="text-gray-500 space-y-3 text-base leading-relaxed">
               <p>
-                Every AI-powered system I build follows a modular, backend-first, and evaluation-driven architecture. 
-                My security philosophy is "Zero Trust at the Boundary." I implement strict input validation, least-privilege access for database users, and encrypted-at-rest protocols for sensitive fields.
+                I engineer systems with a foundation-first approach—building robust backend architectures that scale horizontally and maintain data integrity under load. My philosophy centers on clean code principles, comprehensive testing, and designing for failure scenarios.
               </p>
               <p>
-                I build backend systems where predictability is a feature and security is an architectural constraint, not a checklist item. My approach centers on high-performance data modeling and modular service design.
+                Performance optimization drives my development decisions. I implement efficient algorithms, optimize database queries, and leverage caching strategies to ensure sub-second response times. Security is woven into every layer, from input validation to encrypted data persistence.
               </p>
               <p>
-              I build Node.js applications with a "production-first" mindset—prioritizing type safety, database integrity, and asynchronous performance over "clever" shortcuts.
+                I embrace modern development practices: containerized deployments, CI/CD pipelines, and infrastructure as code. My code is documented, tested, and maintainable—built for teams to collaborate effectively and for systems to evolve gracefully over time.
               </p>
             </div>
           </motion.div>
