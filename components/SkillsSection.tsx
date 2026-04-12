@@ -157,13 +157,13 @@ const SkillsSection = () => {
             
             <div className="text-gray-500 space-y-3 text-base leading-relaxed">
               <p>
-                I engineer systems with a foundation-first approach—building robust backend architectures that scale horizontally and maintain data integrity under load. My philosophy centers on clean code principles, comprehensive testing, and designing for failure scenarios.
+                I design systems with a foundation-first approach building robust backend architectures that scale horizontally and maintain data integrity under load. My philosophy centers on clean code principles, comprehensive testing, and designing for failure scenarios.
               </p>
               <p>
                 Performance optimization drives my development decisions. I implement efficient algorithms, optimize database queries, and leverage caching strategies to ensure sub-second response times. Security is woven into every layer, from input validation to encrypted data persistence.
               </p>
               <p>
-                I embrace modern development practices: containerized deployments, CI/CD pipelines, and infrastructure as code. My code is documented, tested, and maintainable—built for teams to collaborate effectively and for systems to evolve gracefully over time.
+                I embrace modern development practices: containerized deployments, CI/CD pipelines, and infrastructure as code. My code is documented, tested, and maintainable built for teams to collaborate effectively and for systems to evolve gracefully over time.
               </p>
             </div>
           </motion.div>
