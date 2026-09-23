@@ -89,7 +89,7 @@ const HeroSection = () => {
                 
                 {/* Portrait Image */}
                 <img
-                  src="/profile2 (2).jpg"
+                  src="/profile2(2).jpg"
                   alt="Chhatra Raj Neupane"
                   className="w-full h-full object-cover"
                   loading="eager"

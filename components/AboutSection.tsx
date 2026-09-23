@@ -145,7 +145,7 @@ const AboutSection = () => {
               viewport={{ once: true, margin: "-200px" }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              Hello everyone, I am Chhatra Neupane, currently pursuing my final year bachelor's degree in Computer Engineering. I am a passionate Backend Developer, machine learning and deep learning enthusiast, and an avid problem solver, driven to build smart, efficient systems while continuously learning and applying new technologies in collaborative environments.
+        A Computer Engineer working across backend development and machine learning. I like solving problems that force me to learn something new, and I do my best work in teams
             </motion.p>
 
             <motion.div
@@ -214,7 +214,7 @@ const AboutSection = () => {
                 viewport={{ once: true, margin: "-200px" }}
                 transition={{ delay: 2.6, duration: 0.6 }}
               >
-                Proficient in React, Node.js, Python, Machine Learning, and modern web technologies with focus on clean code and best practices.
+                Proficient in React, Node.js, Python, FastAPI, Machine Learning, and modern web technologies with focus on clean code and best practices.
               </motion.p>
             </motion.div>
 

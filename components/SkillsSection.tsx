@@ -8,7 +8,7 @@ const skillsData = [
   },
    {
     category: "BACKEND",
-    items: ["Node.js", "Flask", "Django", "PostgreSQL", "MongoDB"]
+    items: ["Node.js", "Flask", "FastApi", "PostgreSQL"]
   },
    {
     category: "Frontend ",
@@ -28,7 +28,7 @@ const skillsData = [
   // },
   {
     category: "INFRASTRUCTURE",
-    items: ["Docker", "Kubernetes",  "Google Cloud"]
+    items: ["Docker", "NGINX",  "Vercel" , "Render"]
   },
  
 ];
