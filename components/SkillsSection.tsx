@@ -28,7 +28,7 @@ const skillsData = [
   // },
   {
     category: "INFRASTRUCTURE",
-    items: ["Docker", "NGINX",  "Vercel" , "Render"]
+    items: ["Docker", "Nginx",  "Vercel" , "Render"]
   },
  
 ];
@@ -138,9 +138,9 @@ const SkillsSection = () => {
           >
             <h2 className="text-[5px] md:text-xs font-bold tracking-wider uppercase whitespace-nowrap">
   <span className="bg-gradient-to-r from-orange-300 via-red-500 to-purple-500 bg-clip-text text-transparent">
-    Engineering
+  Development Philosophy
   </span>
-  <span className="text-gray-500 ml-1 from-orange-100 via-red-300 to-purple-400">Philosophy</span>
+  
 </h2>
 
           </motion.div>
@@ -151,13 +151,13 @@ const SkillsSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="max-w-4xl"
           >
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
+            {/* <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
               What Drives My Engineering Approach ? 
-            </h3>
+            </h3> */}
             
             <div className="text-gray-500 space-y-3 text-base leading-relaxed">
               <p>
-                I design systems with a foundation-first approach building robust backend architectures that scale horizontally and maintain data integrity under load. My philosophy centers on clean code principles, comprehensive testing, and designing for failure scenarios.
+                I design systems with a foundation-first approach building robust backend architectures that scales efficiently and maintain data integrity under load. My philosophy centers on clean code principles, comprehensive testing, and designing for failure scenarios.
               </p>
               <p>
                 Performance optimization drives my development decisions. I implement efficient algorithms, optimize database queries, and leverage caching strategies to ensure sub-second response times. Security is woven into every layer, from input validation to encrypted data persistence.

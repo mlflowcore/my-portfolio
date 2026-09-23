@@ -199,10 +199,18 @@ export default function ContactWithFooter() {
         </div>
       </section>
 
-     <footer className="w-full py-6 flex justify-center items-center bg-neutral-950 border-t border-white/5">
-  <p className="text-[11px] text-gray-500 text-center tracking-wide">
-    © {new Date().getFullYear()} Chhatra Neupane · All rights reserved
-  </p>
+  <footer className="w-full bg-black border-t border-white/10 py-8">
+  <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+    <p className="text-[11px] text-gray-500 font-light tracking-wide">
+      © {new Date().getFullYear()} Chhatra Neupane. All rights reserved.
+    </p>
+     <button
+    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    className="text-[13px] text-gray-500 font-light tracking-wide transition-colors duration-300 hover:text-orange-400 px-49"
+  >
+    Back to top
+  </button>
+  </div>
 </footer>
     </>
   );
