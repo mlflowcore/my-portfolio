@@ -189,7 +189,7 @@ const HeroSection = () => {
                 transition={{ delay: 1.1, duration: 0.8 }}
               >
                 <motion.a
-                  href="/my_cv.pdf"
+                  href="chhatra_neupane_resume.pdf"
                   download
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
